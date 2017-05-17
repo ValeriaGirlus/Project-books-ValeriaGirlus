@@ -1,0 +1,255 @@
+/*body {
+	background: url("http://az616578.vo.msecnd.net/files/2016/05/22/635994817168223213-230785194_why-you-should-read-and-re-read-these-high-school-books-as-an-adult.jpeg");
+	background-size: cover;
+	background-repeat: no-repeat;
+	
+}
+*/
+p {
+	font-size: 14pt;
+	color: black;
+
+}
+
+.quote {
+	color: #38373E;
+	font-style: italic;
+	font-weight: 600;
+	margin: 200px;
+	text-align: center;
+	border-radius: 12px;
+}
+
+.header {
+	float: center;
+	color: #33ccff;
+	font-size: 50pt;
+	font-family: Book Antiqua;
+	font-style: oblique;
+	margin-top: 100px;
+}
+
+.book {
+/*	width: 350px;
+	margin: 20px;
+	margin-top: 25px;
+	margin-left: 100px;*/
+	display: none;
+}
+
+.book.active {
+	display: block;
+}
+
+.capa{
+	margin-bottom: 50px;
+	max-width: 300px;
+	max-height: 300px;
+	display: block;
+	margin: auto;
+	border-radius: 12px;
+}
+
+.corpus {
+	text-align: center;
+	margin: 10px;
+	width: auto;
+}
+
+.buttons {
+	width: 100%;
+	display: none;
+}
+
+.results {
+	margin-top: 100px;
+	width: auto;
+	align-content: center;
+	text-align: center;
+}
+
+.col-centered{
+	margin:10px auto;
+	text-align: center;
+	align-content: center;
+}
+
+.sites {
+	width: 60%;
+	max-height: 200px;
+	display: flex;
+	justify-content: center;
+	text-align: center;
+} 
+
+.book:nth-child(1){
+	display: block;
+}
+
+.btn {
+	margin: 10px;
+}
+
+.glyphicon {
+	margin: 5px;
+	cursor: pointer;
+}
+
+#title {
+	color: #66ccff;
+	font-weight: bold;
+}
+
+h1 {
+	font-size: 20pt;
+	text-align: center;
+	font-style: italic;
+}
+
+h2{
+	font-size: 14pt;
+	text-align: center;
+	color: black;
+	font-weight: bold;
+}
+
+.wikipediaimg {
+	width: 90px;
+	height: 90px;
+	margin: 10px;
+}
+
+.goodreadsimg {
+	width: 70px;
+	height: 70px;
+	margin: 20px;
+}
+
+.amazonimg {
+	width: 70px;
+	height: 70px;
+	margin: 20px;
+}
+
+.googleplayimg {
+	width: 70px;
+	height: 70px;
+	margin: 20px;
+}
+
+
+.book:not(:first-of-type) {
+	/*display: none;*/
+}
+
+#counter1 {
+	align-content: right;
+	width: 100%;
+	color: #47d147;
+	font-size: 50px;
+}
+
+#counter2 {
+	align-content: right;
+	width: 100%;
+	color: #ff471a;
+	font-size: 50px;
+}
+
+#results {
+	display:none;
+}
+
+#bookContainer {
+	display: none;
+}
+
+#startPage{
+	text-align: center;
+	margin: 100px;
+}
+
+#startButton {
+	align-content: center;
+	border-radius: 8px;
+	border:none;
+	text-decoration: none;
+	font-weight: bold;
+	font-size: 30pt;
+	color: #ff661a;
+}
+
+#g1 {
+	align-content: center;
+	font-size: 50px;
+}
+
+#g2 {
+	align-content: center;
+	font-size: 50px;
+}
+
+#t4 {
+	font-size: 22pt;
+	text-align: center;
+	margin: 100px;
+	color: black;
+}
+
+#repeatButton {
+	font-size: 30px;
+	border-radius: 8px;
+	border:none;
+	text-decoration: none;
+	background:rgba(194, 197, 200, 0);
+	color: #58585A;
+}
+
+.footer {
+	font-size: 12pt;
+	font-style: italic;
+	font-weight: bold;
+	color: #2A2B2D;
+	text-align: center;
+
+}
+	
+
+
+
+/* o icon da start page
+http://www.flaticon.com/free-icon/books_167756#term=book&page=1&position=21 */
+/* http://www.jswidget.com/lab/easy-comment.html */
+
+/*
+
+#t5 {
+	color: black;
+	border-radius: 5px;
+}
+
+h3#t5 {
+	font-size: 12pt;
+	text-align: center;
+}
+
+*/
+
+
+/*.alignright  {
+	/*float: right;
+}*/
+
+/*.alignleft {
+	float: left;
+
+}*/
+
+
+
+
+
+
+
+
+
