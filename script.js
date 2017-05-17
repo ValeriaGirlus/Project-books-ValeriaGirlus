@@ -224,7 +224,7 @@ var library = new Array(book1, book2, book3);
 function loadDataWithHTML (){
 	
 	var HTMLtoInsert = `
-		<div class="book col-md-6 col-md-offset-3 " >
+		<div class="book col-xs-6 col-xs-offset-3 " >
 			<div class="capa col-centered">
 				<img class="capa" >
 			</div>
@@ -353,7 +353,7 @@ var ShelfID = "1002";
 
 function LoadData(book){
 	var html = `
-		<div class="book col-md-6 col-md-offset-3 " >
+		<div class="book col-xs-6 col-xs-offset-3 " >
 			<div class="capa col-centered">
 				<img class="capa" src="">
 			</div>
