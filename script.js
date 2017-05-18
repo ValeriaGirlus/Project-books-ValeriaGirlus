@@ -224,7 +224,7 @@ var library = new Array(book1, book2, book3);
 function loadDataWithHTML (){
 	
 	var HTMLtoInsert = `
-		<div class="book col-md-6 col-md-offset-3 " >
+		<div class="book col-xs-6 col-xs-offset-3 " >
 			<div class="capa col-centered">
 				<img class="capa" >
 			</div>
@@ -315,6 +315,7 @@ $(".buttons button.like, button.dislike").click(function(){
 $(".buttons button.like").click(function(){
 
 	$("#counter1").text(++counter1);
+
 });
 
 //para o botao dislike
@@ -353,7 +354,7 @@ var ShelfID = "1002";
 
 function LoadData(book){
 	var html = `
-		<div class="book col-md-6 col-md-offset-3 " >
+		<div class="book col-xs-6 col-xs-offset-3 " >
 			<div class="capa col-centered">
 				<img class="capa" src="">
 			</div>
@@ -400,13 +401,79 @@ $.ajax({
 });
 
  
+// funcionalidade do botao dos favoritos e lista dos favoritos
+
+	function addToFavorites(){
+	
+	$(".favorite").click(function(){
+
+	$book = $(".book.active");
+	$capa = $book.find(".capa");
+
+
+	$capa.appendTo(".favorites");
+	$(".bookContainer").hide();
+	$(".buttons").hide();
+	$(".header").hide();
+
+	});
+};
+
+	addToFavorites();
+
+function clickFavorite() {
+
+	$(".favorite").click(function(){
+
+		$book = $(".book.active");
+
+ 	 $book.fadeOut(500,function(){
+		$book.removeClass("active");
+		$(window).scrollTop(0);
+
+		
+		$(".favorite").fadeIn(500,function(){
+		$(".favorite").addClass("active");
+
+		});						
+	});
+});
+};
+
+clickFavorite();
+
+
+function clickHome(){
+
+	$(".home").click(function(){
+	
+	$(".favorite").hide();
+	$("#startPage").show();
+
+
+	});
+};
+
+
+
+
+
+
+
+
+
 /* para ver os detalhes dos livros, na janela do inspect, network, aparecem em baixo os objectos que sao
 adicionados, click em cima deles e dps copiar o selfLink para o browser */
 
+/*
+function myFunction() {
+    var x = document.getElementById("myTopnav");
+    if (x.className === "topnav") {
+        x.className += " responsive";
+    } else {
+        x.className = "topnav";
+    }
+}
 
-
-
-
-
-
+*/
 

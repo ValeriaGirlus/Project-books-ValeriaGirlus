@@ -21,6 +21,7 @@
 	<br>
 	<header>
 		<div class="row"><h1 class= "header col-centered">Booklist</h1></div>
+
 	</header>
 	<div class="container-fluid" id="startPage"><button type="button" class="btn btn-link" id="startButton"><img src="books.png"></button>
 		<p class="quote">"I do belive that something very magical can happen when you read a good book"<br>J.K.Rowling</p>
