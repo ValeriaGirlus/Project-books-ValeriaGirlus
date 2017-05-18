@@ -1,10 +1,10 @@
-/*body {
-	background: url("background.jpg");
+body {
+	background: #e6f3ff;
 	background-size: cover;
 	background-repeat: no-repeat;
 	
 }
-*/
+
 p {
 	font-size: 14pt;
 	color: black;
@@ -26,7 +26,8 @@ p {
 	font-size: 50pt;
 	font-family: Book Antiqua;
 	font-style: oblique;
-	margin-top: 100px;
+	padding-top: 30px;
+	
 }
 
 .book {
@@ -60,10 +61,6 @@ p {
 	width: 100%;
 	display: none;
 	
-}
-
-.favorite {
-	font-size: 10px;
 }
 
 .results {
@@ -101,11 +98,13 @@ p {
 }
 
 .favorite {
-	font-size: 30px;
+	font-size: 20px;
+	float: center;
+
 }
 
 #title {
-	color: #66ccff;
+	color: #ff6666;
 	font-weight: bold;
 }
 
@@ -215,9 +214,8 @@ h2{
 }
 
 .footer {
-	font-size: 12pt;
+	font-size: 10pt;
 	font-style: italic;
-	font-weight: bold;
 	color: #2A2B2D;
 	text-align: center;
 

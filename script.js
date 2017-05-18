@@ -137,7 +137,7 @@ $(".bookList button.repeat").click(function(){
 var book1 = { 
 	name: "Madame Curie", 
 	author: "Eva Curie", 
-	description: "Marie Sklodowska Curie (1867–1934) was the first woman scientist to win worldwide acclaim and was, indeed, one of the great scientists of the twentieth century. Written by Curie's daughter, the renowned international activist Eve Curie, this biography chronicles Curie's legendary achievements in science, including her pioneering efforts in the study of radioactivity and her two Nobel Prizes in Physics and Chemistry. It also spotlights her remarkable life, from her childhood in Poland, to her storybook Parisian marriage to fellow scientist Pierre Curie, to her tragic death from the very radium that brought her famme.", 
+	description: "Marie Sklodowska Curie (1867–1934) was the first woman scientist to win worldwide acclaim and was, indeed, one of the great scientists of the twentieth century. Written by Curie's daughter, the renowned international activist Eve Curie, this biography chronicles Curie's legendary achievements in science, including her pioneering efforts in the study of radioactivity and her two Nobel Prizes in Physics and Chemistry. It also spotlights her remarkable life, from her childhood in Poland, to her storybook Parisian marriage to fellow scientist Pierre Curie, to her tragic death from the very radium that brought her fame.", 
 	cover: "https://images-na.ssl-images-amazon.com/images/I/51PC8ek8YbL._SX311_BO1,204,203,200_.jpg",
 	wikipedia: "https://en.wikipedia.org/wiki/Marie_Curie",
 	wikipediaimg: "http://www.pharmacy.qu.edu.sa/en/Services/PublishingImages/wiki%20pedia.png",
@@ -400,10 +400,23 @@ $.ajax({
 	});
 });
 
- 
-// funcionalidade do botao dos favoritos e lista dos favoritos
 
-	function addToFavorites(){
+// responsive navigation bar
+
+function myFunction() {
+    var x = document.getElementById("myTopnav");
+    if (x.className === "topnav") {
+        x.className += " responsive";
+    } else {
+        x.className = "topnav";
+    }
+}
+
+
+ 
+// funcionalidade da estrela que é o botao dos favoritos 
+
+function addToFavorites(){
 	
 	$(".favorite").click(function(){
 
@@ -412,29 +425,111 @@ $.ajax({
 
 
 	$capa.appendTo(".favorites");
-	$(".bookContainer").hide();
+	$(".book").hide();
 	$(".buttons").hide();
-	$(".header").hide();
-
+	
+	
 	});
 };
 
-	addToFavorites();
+addToFavorites();
 
-function clickFavorite() {
 
-	$(".favorite").click(function(){
+// como voltar para trás dos favoritos para a pagina inicial ao clicar home
 
-		$book = $(".book.active");
+
+function clickFavorites(){
+
+	$(".favorites").click(function(){
+
+	$allBooks = $(".book");
+	$book = $(".book.active");
+	$next = $book.next(".book");
+
+
+	if( $allBooks.index($book) == $allBooks.length-1){
+		$next = $allBooks.eq(0);
+		$("#bookContainer").hide();                                                                                                           
+		$("#results").show();
+		$(".buttons").hide();
+
+	}
+	
 
  	 $book.fadeOut(500,function(){
 		$book.removeClass("active");
 		$(window).scrollTop(0);
 
+		$next.fadeIn(500,function(){
+			$next.addClass("active");
+
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*
+function clickHome(){
+
+	$(".favorites").click(function(){
+
+	$favorites = $(".favorites.active");
+
+		$favorites.fadeOut(500,function(){
+		$favorites.removeClass("active");
+		$(window).scrollTop(0);
+
+		
+		$(".startPage").fadeIn(500,function(){
+		$(".startPage").addClass("active");
+
+		});						
+	});
+});
+};
+
+clickHome();
+
+
+
+
+
+
+
+
+
+// funcionalidade do botao favorites da barra de navegaçao 
+
+/*function clickFavorite() {
+
+	$(".favorite").click(function(){
+
+		$book = $(".book.active");
+
+ 	 	$book.fadeOut(500,function(){
+			$book.removeClass("active");
+			$(window).scrollTop(0);
+
 		
 		$(".favorite").fadeIn(500,function(){
 		$(".favorite").addClass("active");
-
+	
 		});						
 	});
 });
@@ -443,16 +538,41 @@ function clickFavorite() {
 clickFavorite();
 
 
-function clickHome(){
+function clickFavorites (){
 
-	$(".home").click(function(){
+	$(".favorites").click(function(){
+
+		
+
+		$(".startPage").fadeOut(500,function(){
+			$(".startPage").removeClass("active");
+			$(window).scrollTop(0);
+
+		
+		$(".favorites").fadeIn(500,function(){
+		$(".favorites").addClass("active");
 	
-	$(".favorite").hide();
-	$("#startPage").show();
-
-
+		});						
 	});
+});
 };
+
+clickFavorites();
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -465,15 +585,5 @@ function clickHome(){
 /* para ver os detalhes dos livros, na janela do inspect, network, aparecem em baixo os objectos que sao
 adicionados, click em cima deles e dps copiar o selfLink para o browser */
 
-/*
-function myFunction() {
-    var x = document.getElementById("myTopnav");
-    if (x.className === "topnav") {
-        x.className += " responsive";
-    } else {
-        x.className = "topnav";
-    }
-}
 
-*/
 
