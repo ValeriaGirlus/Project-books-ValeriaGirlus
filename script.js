@@ -343,6 +343,10 @@ $("#repeatButton").click(function(){
 
 });
 
+$()
+
+
+
 
 // usar ajax para introduzir mais livros
 
@@ -418,53 +422,26 @@ function myFunction() {
 
 function addToFavorites(){
 	
-	$(".favorite").click(function(){
+	$(".star").click(function(){
 
 	$book = $(".book.active");
 	$capa = $book.find(".capa");
+	 
 
 
-	$capa.appendTo(".favorites");
-	$(".book").hide();
-	$(".buttons").hide();
+	$capa.appendTo(".favoriteList");
 	
-	
-	});
+	$book.show();
+	$capa.show();
+
+
+	});	
 };
 
 addToFavorites();
 
 
-// como voltar para trás dos favoritos para a pagina inicial ao clicar home
-
-
-function clickFavorites(){
-
-	$(".favorites").click(function(){
-
-	$allBooks = $(".book");
-	$book = $(".book.active");
-	$next = $book.next(".book");
-
-
-	if( $allBooks.index($book) == $allBooks.length-1){
-		$next = $allBooks.eq(0);
-		$("#bookContainer").hide();                                                                                                           
-		$("#results").show();
-		$(".buttons").hide();
-
-	}
-	
-
- 	 $book.fadeOut(500,function(){
-		$book.removeClass("active");
-		$(window).scrollTop(0);
-
-		$next.fadeIn(500,function(){
-			$next.addClass("active");
-
-
-}
+// depois de ver s livros todos clicar em favoritos para ver a lista
 
 
 
@@ -477,87 +454,6 @@ function clickFavorites(){
 
 
 
-
-
-
-
-
-
-
-/*
-function clickHome(){
-
-	$(".favorites").click(function(){
-
-	$favorites = $(".favorites.active");
-
-		$favorites.fadeOut(500,function(){
-		$favorites.removeClass("active");
-		$(window).scrollTop(0);
-
-		
-		$(".startPage").fadeIn(500,function(){
-		$(".startPage").addClass("active");
-
-		});						
-	});
-});
-};
-
-clickHome();
-
-
-
-
-
-
-
-
-
-// funcionalidade do botao favorites da barra de navegaçao 
-
-/*function clickFavorite() {
-
-	$(".favorite").click(function(){
-
-		$book = $(".book.active");
-
- 	 	$book.fadeOut(500,function(){
-			$book.removeClass("active");
-			$(window).scrollTop(0);
-
-		
-		$(".favorite").fadeIn(500,function(){
-		$(".favorite").addClass("active");
-	
-		});						
-	});
-});
-};
-
-clickFavorite();
-
-
-function clickFavorites (){
-
-	$(".favorites").click(function(){
-
-		
-
-		$(".startPage").fadeOut(500,function(){
-			$(".startPage").removeClass("active");
-			$(window).scrollTop(0);
-
-		
-		$(".favorites").fadeIn(500,function(){
-		$(".favorites").addClass("active");
-	
-		});						
-	});
-});
-};
-
-clickFavorites();
 
 
 
