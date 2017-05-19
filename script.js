@@ -325,9 +325,56 @@ $(".buttons button.dislike").click(function(){
 	$("#counter2").text(++counter2);
 });
 
-// para o botao restart
+// para a seta da esquerda
+
+$(".buttons button.left").click(function(){
+
+	$allBooks = $(".book");
+	$book = $(".book.active");
+	$previous = $book.previous(".book");
 
 
+
+	
+
+	
+
+});
+
+//para a seta da direita
+
+$(".buttons button.right").click(function(){
+	
+	$allBooks = $(".book");
+	$book = $(".book.active");
+	$next = $book.next(".book");
+
+
+	if( $allBooks.index($book) == $allBooks.length-1){
+		$next = $allBooks.eq(0);
+		$("#bookContainer").hide();                                                                                                           
+		$("#results").show();
+		$(".buttons").hide();
+
+	}
+	
+
+ 	 $book.fadeOut(500,function(){
+		$book.removeClass("active");
+		$(window).scrollTop(0);
+
+		$next.fadeIn(500,function(){
+			$next.addClass("active");
+		});
+	});
+});
+
+
+
+
+// para o botao restart no final de todos os livros mas tirei pois tenho o home para voltar ao inicio
+
+/*
 
 $("#repeatButton").click(function(){
 	$("#results").hide();
@@ -343,10 +390,7 @@ $("#repeatButton").click(function(){
 
 });
 
-$()
-
-
-
+*/
 
 // usar ajax para introduzir mais livros
 
@@ -406,7 +450,7 @@ $.ajax({
 
 
 // responsive navigation bar
-
+/*
 function myFunction() {
     var x = document.getElementById("myTopnav");
     if (x.className === "topnav") {
@@ -418,33 +462,7 @@ function myFunction() {
 
 
  
-// funcionalidade da estrela que é o botao dos favoritos 
-
-function addToFavorites(){
-	
-	$(".star").click(function(){
-
-	$book = $(".book.active");
-	$capa = $book.find(".capa");
-	 
-
-
-	$capa.appendTo(".favoriteList");
-	
-	$book.show();
-	$capa.show();
-
-
-	});	
-};
-
-addToFavorites();
-
-
-// depois de ver s livros todos clicar em favoritos para ver a lista
-
-
-
+*/
 
 
 
