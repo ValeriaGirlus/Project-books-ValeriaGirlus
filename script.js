@@ -316,6 +316,7 @@ $(".buttons button.like").click(function(){
 
 	$("#counter1").text(++counter1);
 
+
 });
 
 //para o botao dislike
@@ -325,21 +326,34 @@ $(".buttons button.dislike").click(function(){
 	$("#counter2").text(++counter2);
 });
 
-// para a seta da esquerda
+// para a seta da esquerda mas qdo chega ao primeiro livro nao me aparece a pagina incial!!!
 
 $(".buttons button.left").click(function(){
 
 	$allBooks = $(".book");
 	$book = $(".book.active");
-	$previous = $book.previous(".book");
+	$previous = $book.prev(".book");
 
+	if( $allBooks.index($book) == $allBooks.length){
+		$previous = $allBooks.eq(-1);
+		$("#bookContainer").hide();                                                                                                           
+		$book.show();
+		$(".buttons").hide();
 
-
+	}
 	
+ 	 $book.fadeOut(500,function(){
+		$book.removeClass("active");
+		$(window).scrollTop(0);
 
-	
+		$previous.fadeIn(500,function(){
+			$previous.addClass("active");
 
+	});
 });
+});
+
+
 
 //para a seta da direita
 
@@ -369,7 +383,7 @@ $(".buttons button.right").click(function(){
 	});
 });
 
-
+// função para adiocionar os likes aos favoritos na pagina final
 
 
 // para o botao restart no final de todos os livros mas tirei pois tenho o home para voltar ao inicio
@@ -432,10 +446,7 @@ function LoadData(book){
 	$('.capa', $bookHTML).attr("src", book.volumeInfo.imageLinks.thumbnail);
 	$('.googleplay', $bookHTML).attr("href", book.volumeInfo.infoLink);
 
-
-	
 }    
-
 
 $.ajax({
 	url:"https://www.googleapis.com/books/v1/users/" + UserID + "/bookshelves/" + ShelfID + "/volumes?key=" + APIKey
@@ -447,6 +458,19 @@ $.ajax({
 	LoadData(item);
 	});
 });
+
+// resolver isto
+function addToFavorites(){
+
+	$allBooks = $(".book");
+	$cover = $allBooks.find(".capa");
+	$cover.clone().appendTo(".favorites");
+
+};
+
+addToFavorites();
+
+
 
 
 // responsive navigation bar
@@ -460,8 +484,6 @@ function myFunction() {
     }
 }
 
-
- 
 */
 
 

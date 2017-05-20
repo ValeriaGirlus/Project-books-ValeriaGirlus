@@ -70,6 +70,12 @@ p {
 	text-align: center;
 }
 
+.favorites {
+	margin-top: 100px;
+	width: auto;
+	align-content: center;
+	text-align: center;
+}
 .col-centered{
 	margin:10px auto;
 	text-align: center;
@@ -97,14 +103,8 @@ p {
 	cursor: pointer;
 }
 
-.favorite {
-	font-size: 20px;
-	float: center;
-
-}
-
 #title {
-	color: #ff6666;
+	color:#ff8080;
 	font-weight: bold;
 }
 
@@ -212,6 +212,7 @@ h2{
 }
 
 
+/*
 #repeatButton {
 	font-size: 30px;
 	border-radius: 8px;
@@ -220,6 +221,7 @@ h2{
 	background:rgba(194, 197, 200, 0);
 	color: #58585A;
 }
+*/
 
 .footer {
 	font-size: 10pt;
@@ -276,9 +278,6 @@ h2{
 
 }
 
-.favoriteList {
-	display:block;
-}
 
 /* o icon da start page
 http://www.flaticon.com/free-icon/books_167756#term=book&page=1&position=21 */
