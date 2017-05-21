@@ -1,14 +1,11 @@
 body {
-	
 	background-size: cover;
 	background-repeat: no-repeat;
-	
 }
 
 p {
 	font-size: 14pt;
 	color: black;
-
 }
 
 .quote {
@@ -26,8 +23,7 @@ p {
 	font-size: 50pt;
 	font-family: Book Antiqua;
 	font-style: oblique;
-	padding-top: 30px;
-	
+	padding-top: 70px;	
 }
 
 .book {
@@ -51,6 +47,15 @@ p {
 	border-radius: 12px;
 }
 
+.capa1{
+	margin-bottom: 50px;
+	width: 200px;
+	height: 300px;
+	display: block;
+	margin: auto;
+	border-radius: 12px;
+}
+
 .corpus {
 	text-align: center;
 	margin: 10px;
@@ -60,7 +65,6 @@ p {
 .buttons {
 	width: 100%;
 	display: none;
-	
 }
 
 .results {
@@ -69,13 +73,14 @@ p {
 	align-content: center;
 	text-align: center;
 }
-
+/*
 .favorites {
 	margin-top: 100px;
 	width: auto;
 	align-content: center;
 	text-align: center;
 }
+*/
 .col-centered{
 	margin:10px auto;
 	text-align: center;
@@ -88,6 +93,7 @@ p {
 	display: flex;
 	justify-content: center;
 	text-align: center;
+	cursor: pointer;
 } 
 
 .book:nth-child(1){
@@ -106,6 +112,7 @@ p {
 #title {
 	color:#ff8080;
 	font-weight: bold;
+
 }
 
 h1 {
@@ -211,6 +218,62 @@ h2{
 	color: black;
 }
 
+.footer {
+	font-size: 10pt;
+	font-style: italic;
+	color: #2A2B2D;
+	text-align: center;
+}
+
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #bfbfbf;
+    position: fixed;
+    top: 0;
+    width: 100%;
+}
+
+li {
+    float: left;
+}
+
+li a {
+    display: block;
+    color: black;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
+@media screen and (max-width: 600px){
+    ul.topnav li.right, 
+    ul.topnav li {float: none;}
+}
+
+input[type=text] {
+    width: 130px;
+    box-sizing: border-box;
+    border: 0.5px solid #ccc;
+    border-radius: 4px;
+    font-size: 16px;
+    background-color: white;
+    background-image: url('searchicon.png');
+    background-position: 10px 10px; 
+    background-repeat: no-repeat;
+    padding: 12px 20px 12px 40px;
+    -webkit-transition: width 0.4s ease-in-out;
+    transition: width 0.4s ease-in-out;
+}
+
+.search {
+	float: right;
+}
+
+
+
 
 /*
 #repeatButton {
@@ -223,80 +286,10 @@ h2{
 }
 */
 
-.footer {
-	font-size: 10pt;
-	font-style: italic;
-	color: #2A2B2D;
-	text-align: center;
-
-}
-	
-.topnav {
-  overflow: hidden;
-  background-color: #333;
-}
-
-.topnav a {
-  float: left;
-  display: block;
-  color: #f2f2f2;
-  text-align: center;
-  padding: 14px 16px;
-  text-decoration: none;
-  font-size: 17px;
-}
-
-.topnav a:hover {
-  background-color: #ddd;
-  color: black;
-}
-
-.topnav .icon {
-  display: none;
-}
-
-@media screen and (max-width: 600px) {
-  .topnav a:not(:first-child) {display: none;}
-  .topnav a.icon {
-    float: right;
-    display: block;
-  }
-}
-
-@media screen and (max-width: 600px) {
-  .topnav.responsive {position: relative;}
-  .topnav.responsive .icon {
-    position: absolute;
-    right: 0;
-    top: 0;
-  }
-  .topnav.responsive a {
-    float: none;
-    display: block;
-    text-align: left;
-  }
-
-}
-
 
 /* o icon da start page
 http://www.flaticon.com/free-icon/books_167756#term=book&page=1&position=21 */
 /* http://www.jswidget.com/lab/easy-comment.html */
-
-/*
-
-#t5 {
-	color: black;
-	border-radius: 5px;
-}
-
-h3#t5 {
-	font-size: 12pt;
-	text-align: center;
-}
-
-*/
-
 
 /*.alignright  {
 	/*float: right;
@@ -306,12 +299,5 @@ h3#t5 {
 	float: left;
 
 }*/
-
-
-
-
-
-
-
 
 

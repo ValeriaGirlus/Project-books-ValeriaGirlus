@@ -11,14 +11,19 @@
 </head>
 <body>
 	<div class="row"><h1 class= "header col-centered">Booklist</h1></div>
-	<br>
-	<div class="topnav" id="myTopnav">
-		
-		<a href="javascript: history.go(0)">Home</a>
-  		<a href="javascript:void(0);" style="font-size:15px;" class="icon" onclick="myFunction()">&#9776;</a>
+
+	<div class="navbar" id="myTopnav">
+		<ul>
+  			<li><a href="javascript: history.go(0)" ><i class="glyphicon glyphicon-home"></i></a></li>
+  			<li class="categorias"><a href="#categories">Categories</a></li>
+  			<form class="search">
+  			<input type="text" name="search" placeholder="Search..">
+  			<button type="button" class="btn-link"><i class="glyphicon glyphicon-search"></i></button>
+  			</form>
+  			
+		</ul>
 	</div>
-	
-	<br>
+
 	<div class="container-fluid" id="startPage"><button type="button" class="btn btn-link" id="startButton"><img src="books.png"></button>
 		<p class="quote">"I do belive that something very magical can happen when you read a good book"<br>J.K.Rowling</p>
 	</div>

@@ -137,12 +137,13 @@ $(".bookList button.repeat").click(function(){
 var book1 = { 
 	name: "Madame Curie", 
 	author: "Eva Curie", 
-	description: "Marie Sklodowska Curie (1867–1934) was the first woman scientist to win worldwide acclaim and was, indeed, one of the great scientists of the twentieth century. Written by Curie's daughter, the renowned international activist Eve Curie, this biography chronicles Curie's legendary achievements in science, including her pioneering efforts in the study of radioactivity and her two Nobel Prizes in Physics and Chemistry. It also spotlights her remarkable life, from her childhood in Poland, to her storybook Parisian marriage to fellow scientist Pierre Curie, to her tragic death from the very radium that brought her fame.", 
+	description: "Written by Curie's daughter, the renowned international activist Eve Curie, this biography chronicles Curie's legendary achievements in science, including her pioneering efforts in the study of radioactivity and her two Nobel Prizes in Physics and Chemistry. It also spotlights her remarkable life, from her childhood in Poland, to her storybook Parisian marriage to fellow scientist Pierre Curie, to her tragic death from the very radium that brought her fame.", 
 	cover: "https://images-na.ssl-images-amazon.com/images/I/51PC8ek8YbL._SX311_BO1,204,203,200_.jpg",
 	wikipedia: "https://en.wikipedia.org/wiki/Marie_Curie",
 	wikipediaimg: "http://www.pharmacy.qu.edu.sa/en/Services/PublishingImages/wiki%20pedia.png",
 	goodreads: "https://www.goodreads.com/book/show/341166.Madame_Curie",
-	goodreadsimg: "https://static.wixstatic.com/media/e3b74d_1f42e439c2a3497db3410c593f49a5c7~mv2.png"
+	goodreadsimg: "https://static.wixstatic.com/media/e3b74d_1f42e439c2a3497db3410c593f49a5c7~mv2.png",
+	category: "Biography & Autobiography"
 
 };
 
@@ -150,23 +151,25 @@ var book1 = {
 var book2 = {  
 	name: "1984",
 	author: "George Orwell",
-	description: "The year 1984 has come and gone, but George Orwell's prophetic, nightmarish vision in 1949 of the world we were becoming is timelier than ever. 1984 is still the great modern classic of ´negative utopia´ -a startlingly original and haunting novel that creates an imaginary world that is completely convincing, from the first sentence to the last four words. No one can deny the novel's hold on the imaginations of whole generations, or the power of its admonitions -a power that seems to grow, not lessen, with the passage of time.",
+	description: "The year 1984 has come and gone, but George Orwell's prophetic, nightmarish vision in 1949 of the world we were becoming is timelier than ever. 1984 is still the great modern classic of ´negative utopia´ -a startlingly original and haunting novel that creates an imaginary world that is completely convincing, from the first sentence to the last four words.",
 	cover: "https://flavorwire.files.wordpress.com/2011/06/georgeorwellxobeygiantprintset-1984coverbyshepardfairey.jpeg",	  
 	wikipedia: "https://en.wikipedia.org/wiki/Nineteen_Eighty-Four",
 	wikipediaimg: "http://www.pharmacy.qu.edu.sa/en/Services/PublishingImages/wiki%20pedia.png",
 	goodreads: "https://www.goodreads.com/book/show/5470.1984",
-	goodreadsimg: "https://static.wixstatic.com/media/e3b74d_1f42e439c2a3497db3410c593f49a5c7~mv2.png"
+	goodreadsimg: "https://static.wixstatic.com/media/e3b74d_1f42e439c2a3497db3410c593f49a5c7~mv2.png",
+	category: "Fiction"
 };
 
 var book3 = { 
 	name: "Memoirs of a geisha",
 	author: "Arthur Golden",
-	description: "A literary sensation and runaway bestseller, this brilliant debut novel presents with seamless authenticity and exquisite lyricism the true confessions of one of Japan's most celebrated geisha.In Memoirs of a Geisha, we enter a world where appearances are paramount; where a girl's virginity is auctioned to the highest bidder; where women are trained to beguile the most powerful men; and where love is scorned as illusion. It is a unique and triumphant work of fiction - at once romantic, erotic, suspenseful - and completely unforgettable.",
+	description: "In Memoirs of a Geisha, we enter a world where appearances are paramount; where a girl's virginity is auctioned to the highest bidder; where women are trained to beguile the most powerful men; and where love is scorned as illusion. It is a unique and triumphant work of fiction - at once romantic, erotic, suspenseful - and completely unforgettable.",
 	cover: "https://upload.wikimedia.org/wikipedia/en/0/09/Memoirs_of_a_Geisha_Poster.jpg",
 	wikipedia: "http://www.goodreads.com/book/show/929.Memoirs_of_a_Geisha",
 	wikipediaimg: "http://www.pharmacy.qu.edu.sa/en/Services/PublishingImages/wiki%20pedia.png",
 	goodreads: "http://www.goodreads.com/book/show/929.Memoirs_of_a_Geisha",
-	goodreadsimg: "https://static.wixstatic.com/media/e3b74d_1f42e439c2a3497db3410c593f49a5c7~mv2.png"
+	goodreadsimg: "https://static.wixstatic.com/media/e3b74d_1f42e439c2a3497db3410c593f49a5c7~mv2.png",
+	category:"Fiction"
 };
 
 
@@ -235,13 +238,14 @@ function loadDataWithHTML (){
 				<br>
 				<p></p>
 				<br>
+				Category:<h2 class="category"></h2>
 				<br>
 				<div class="row">
 					<div class="sites col-centered">
 						<a class="wikipedia" ><img class= "wikipediaimg" ></a>
 						<a class="goodgreads"><img class="goodreadsimg" ></a>
 					</div>
-				</div>	
+				</div>
 			</div>
 		</div>`;
 
@@ -253,6 +257,7 @@ function loadDataWithHTML (){
 		$("h1",$currentBook).text(value.name);
 		$("h2",$currentBook).text(value.author);
 		$("p",$currentBook).text(value.description);
+		$(".category",$currentBook).text(value.category);
 		$(".capa",$currentBook).attr("src", value.cover);
 		$(".wikipedia",$currentBook).attr("href", value.wikipedia);
 		$(".wikipediaimg",$currentBook).attr("src", value.wikipediaimg);
@@ -418,7 +423,7 @@ function LoadData(book){
 	var html = `
 		<div class="book col-xs-6 col-xs-offset-3 " >
 			<div class="capa col-centered">
-				<img class="capa" src="">
+				<img class="capa1" src="">
 			</div>
 			<div class="corpus">
 				<h1 id="title"></h1>
@@ -427,14 +432,13 @@ function LoadData(book){
 				<br>
 				<p></p>
 				<br>
+				Category:<h2 class="category"></h2>
 				<br>
 				<div class="row">
 					<div class="sites col-centered">
 						<a class="googleplay" ><img class= "googleplayimg" src= "https://lh3.googleusercontent.com/DglqS-eYHQYXnj8M8tmzh3JcKDXcidSo3IzgyCZzci8ZTV9Pmuk8vvIFh9XHOztC3Q=w300"></a>
-						<a class="goodreads" src = "https://www.goodreads.com/"><img class= "goodreadsimg" src= "https://static.wixstatic.com/media/e3b74d_1f42e439c2a3497db3410c593f49a5c7~mv2.png"></a>
 					</div>
 				</div>
-			</div>
 		</div>`;
 
 	
@@ -443,8 +447,9 @@ function LoadData(book){
 	$('h1', $bookHTML).text(book.volumeInfo.title);
 	$('h2', $bookHTML).text(book.volumeInfo.authors);
 	$('p', $bookHTML).text(book.volumeInfo.description);
-	$('.capa', $bookHTML).attr("src", book.volumeInfo.imageLinks.thumbnail);
+	$('.capa1', $bookHTML).attr("src", book.volumeInfo.imageLinks.thumbnail);
 	$('.googleplay', $bookHTML).attr("href", book.volumeInfo.infoLink);
+	$('.category', $bookHTML).text(book.volumeInfo.categories);
 
 }    
 
@@ -459,22 +464,9 @@ $.ajax({
 	});
 });
 
-// resolver isto
-function addToFavorites(){
-
-	$allBooks = $(".book");
-	$cover = $allBooks.find(".capa");
-	$cover.clone().appendTo(".favorites");
-
-};
-
-addToFavorites();
-
-
-
 
 // responsive navigation bar
-/*
+
 function myFunction() {
     var x = document.getElementById("myTopnav");
     if (x.className === "topnav") {
@@ -484,16 +476,40 @@ function myFunction() {
     }
 }
 
-*/
+
+function addToCategories(){
+	$allBooks = $(".book");
+	$category = $allBooks.find(".category");
+
+	$category.clone().appendTo(".categorias");
+	$category.hide();
+
+}
+addToCategories();
 
 
 
+$("#categories").click(function(){
+
+ 	$categorias = $(".categorias");
+	$startpage = $(".startPage");
 
 
+		$startpage.fadeIn(500,function(){
+			$startpage.addClass("active");
+	
 
+		$categorias.fadeIn(500,function(){
+			$categorias.addClass("active");
+	});
 
+ 	 $allBooks.hide();
+ 	 $(".startPage").hide();
+ 	 $(".buttons").hide();
 
+});
 
+});
 
 
 
