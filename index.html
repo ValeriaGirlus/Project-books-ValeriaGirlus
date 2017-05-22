@@ -11,30 +11,20 @@
 </head>
 <body>
 	<div class="row"><h1 class= "header col-centered">Booklist</h1></div>
-	<div class="navbar" >
-		<ul>
-			<li><a href="javascript: history.go(0)"><i class="glyphicon glyphicon-home"></i></a></li>
-			<form class="search">
-  				<input type="text" name="search" placeholder="Search..">
-  				<button type="button" class="btn-link"><i class="glyphicon glyphicon-search"></i></button>
-  			</form>
-		
-			<li>
-				<div class="dropdown">
-					<button class="dropbtn">Authors</button>
-  						<div class="dropdown-content">
-  						</div>
-  					
-  				<div class="dropdown">
-					<button class="dropbtn">Categories</button>
-  						<div class="dropdown-content">
-  						</div>
-			</li>
-  					
-  			</div>
-  		</ul>
-  		
+		<div class="container navbar">
+			 <div class="dropdown-content">
+  				<button type="button" class="dropbtn btn-link"><a href="javascript: history.go(0)"><i class="glyphicon glyphicon-home"></i></a></button>
+  				<button class="dropbtn btn-link authors">Authors</button>
+  					<button class="dropbtn btn-link Categories">Categories</button>
+     		</div>
+     		<div class="search">
+     			<form >
+  					<input type="text" name="search" placeholder="Search..">
+  					<button type="button" class="btn-link"><i class="glyphicon glyphicon-search"></i></button>
+  				</form>
+			</div>
 	</div>
+		
 	<div class="container-fluid" id="startPage"><button type="button" class="btn btn-link" id="startButton"><img src="books.png"></button>
 		<p class="quote">"I do belive that something very magical can happen when you read a good book"<br>J.K.Rowling</p>
 	</div>

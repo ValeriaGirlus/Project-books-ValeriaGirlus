@@ -476,7 +476,7 @@ function myFunction() {
     }
 }
 
-
+/*
 function addToAuthors(){
 
 	var authorname = `

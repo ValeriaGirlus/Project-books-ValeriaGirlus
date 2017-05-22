@@ -23,7 +23,7 @@ p {
 	font-size: 50pt;
 	font-family: Book Antiqua;
 	font-style: oblique;
-	padding-top: 70px;
+	padding-top: 30px;
 }
 
 .book {
@@ -225,6 +225,105 @@ h2{
 	text-align: center;
 }
 
+
+.navbar {
+	display: block;
+	list-style-type: none;
+	background-color: #f1f1f1;
+	text-decoration: none;
+
+}
+
+.search {
+	float: right;
+
+}
+
+.dropdown-content {
+	margin-top: 20px;
+}
+
+input[type=text] {
+    width: 130px;
+    box-sizing: border-box;
+    border: 2px solid #ccc;
+    border-radius: 2px;
+    font-size: 16px;
+    background-color: white;
+    background-image: url('searchicon.png');
+    background-position: 10px 10px; 
+    background-repeat: no-repeat;
+    padding: 12px 20px 12px 40px;
+    -webkit-transition: width 0.4s ease-in-out;
+    transition: width 0.4s ease-in-out;
+    margin-bottom: 20px;
+}
+
+
+
+
+
+
+/*
+.container {
+    overflow: hidden;
+    background-color: #333;
+    font-family: Arial;
+}
+
+.container a {
+    float: left;
+    font-size: 16px;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
+.dropdown {
+    float: left;
+    overflow: hidden;
+}
+
+.dropdown .dropbtn {
+    font-size: 16px;    
+    border: none;
+    outline: none;
+    color: white;
+    padding: 14px 16px;
+    background-color: inherit;
+}
+
+.container a:hover, .dropdown:hover .dropbtn {
+    background-color: red;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+}
+
+.dropdown-content a {
+    float: none;
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    text-align: left;
+}
+
+.dropdown-content a:hover {
+    background-color: #ddd;
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+
+/*
 ul {
     list-style-type: none;
     margin: 0;
@@ -268,21 +367,6 @@ input[type=text] {
     transition: width 0.4s ease-in-out;
 }
 
-.search {
-	float: right;
-}
-
-#authors {
-	display: none;
-}
-/*
-.categorias {
-	display: none;
-}
-
-.authors {
-	display: none;
-}
 
 
 /*
