@@ -234,7 +234,7 @@ function loadDataWithHTML (){
 			<div class="corpus">
 				<h1 id="title"></h1>
 				<br>
-				Author:<h2></h2>
+				Author:<h2 class="author"></h2>
 				<br>
 				<p></p>
 				<br>
@@ -339,10 +339,10 @@ $(".buttons button.left").click(function(){
 	$book = $(".book.active");
 	$previous = $book.prev(".book");
 
-	if( $allBooks.index($book) == $allBooks.length){
-		$previous = $allBooks.eq(-1);
+
+	if( $allBooks.index($book) == $allBooks.index(0)){
 		$("#bookContainer").hide();                                                                                                           
-		$book.show();
+		$("#startPage").show();
 		$(".buttons").hide();
 
 	}
@@ -428,7 +428,7 @@ function LoadData(book){
 			<div class="corpus">
 				<h1 id="title"></h1>
 				<br>
-				Author:<h2></h2>
+				Author:<h2 class="author"></h2>
 				<br>
 				<p></p>
 				<br>
@@ -477,39 +477,45 @@ function myFunction() {
 }
 
 
-function addToCategories(){
-	$allBooks = $(".book");
-	$category = $allBooks.find(".category");
+function addToAuthors(){
 
-	$category.clone().appendTo(".categorias");
-	$category.hide();
-
-}
-addToCategories();
+	var authorname = `
+		<a href="#author"></a>
+		`;
 
 
 
-$("#categories").click(function(){
+	$books = $("#bookContainer");
+	$authors = $books.find(".author");
 
- 	$categorias = $(".categorias");
-	$startpage = $(".startPage");
-
-
-		$startpage.fadeIn(500,function(){
-			$startpage.addClass("active");
+	$authors.clone().appendTo(".authors");
 	
 
-		$categorias.fadeIn(500,function(){
-			$categorias.addClass("active");
-	});
+}
+addToAuthors();
 
- 	 $allBooks.hide();
- 	 $(".startPage").hide();
- 	 $(".buttons").hide();
 
+
+
+
+$(".authors").click(function(){
+	$("#startPage").hide();
+	$("#bookContainer").hide();
+	$(".buttons").hide();
+	$(".footer").hide();
 });
 
-});
+
+
+
+
+
+
+
+
+
+
+
 
 
 

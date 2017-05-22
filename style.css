@@ -23,7 +23,7 @@ p {
 	font-size: 50pt;
 	font-family: Book Antiqua;
 	font-style: oblique;
-	padding-top: 70px;	
+	padding-top: 70px;
 }
 
 .book {
@@ -31,7 +31,7 @@ p {
 	margin: 20px;
 	margin-top: 25px;
 	margin-left: 100px;*/
-	display: none;
+	display: none;s
 }
 
 .book.active {
@@ -272,7 +272,17 @@ input[type=text] {
 	float: right;
 }
 
+#authors {
+	display: none;
+}
+/*
+.categorias {
+	display: none;
+}
 
+.authors {
+	display: none;
+}
 
 
 /*

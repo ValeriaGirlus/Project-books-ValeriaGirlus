@@ -11,25 +11,34 @@
 </head>
 <body>
 	<div class="row"><h1 class= "header col-centered">Booklist</h1></div>
-
-	<div class="navbar" id="myTopnav">
+	<div class="navbar" >
 		<ul>
-  			<li><a href="javascript: history.go(0)" ><i class="glyphicon glyphicon-home"></i></a></li>
-  			<li class="categorias"><a href="#categories">Categories</a></li>
-  			<form class="search">
-  			<input type="text" name="search" placeholder="Search..">
-  			<button type="button" class="btn-link"><i class="glyphicon glyphicon-search"></i></button>
+			<li><a href="javascript: history.go(0)"><i class="glyphicon glyphicon-home"></i></a></li>
+			<form class="search">
+  				<input type="text" name="search" placeholder="Search..">
+  				<button type="button" class="btn-link"><i class="glyphicon glyphicon-search"></i></button>
   			</form>
-  			
-		</ul>
+		
+			<li>
+				<div class="dropdown">
+					<button class="dropbtn">Authors</button>
+  						<div class="dropdown-content">
+  						</div>
+  					
+  				<div class="dropdown">
+					<button class="dropbtn">Categories</button>
+  						<div class="dropdown-content">
+  						</div>
+			</li>
+  					
+  			</div>
+  		</ul>
+  		
 	</div>
-
 	<div class="container-fluid" id="startPage"><button type="button" class="btn btn-link" id="startButton"><img src="books.png"></button>
 		<p class="quote">"I do belive that something very magical can happen when you read a good book"<br>J.K.Rowling</p>
 	</div>
-
 	<div class="row container-fluid bookList" id="bookContainer"></div>
-
 	<div class="row">
 		<div class="buttons col-xs-8 col-md-offset-2 col-centered">
 			<button type="button" class="left btn-link"><i class="glyphicon glyphicon-chevron-left"></i></button>
@@ -38,16 +47,14 @@
 			<button type="button" class="right btn-link"><i class="glyphicon glyphicon-chevron-right"></i></button>
 		</div>
 	</div>
-
 	<div class="row container-fluid" id="results">
 		<h3 id="t4">Results</h3>
 		<div class="counters col-centered">
 			<i class="glyphicon glyphicon-thumbs-up" id="g1"><label id="counter1"></label></i>
 			<i class="glyphicon glyphicon-thumbs-down" id="g2"><label id="counter2"></label></i>
 		</div>
-		<div class="favorites" id="t5">Favorites</div>
+	
 	</div>
-
 	<footer class="footer">Valeria Girlus - 2017</footer>	
 	<script type="text/javascript" src="jquery-3.2.1.js"></script>
 	<script type="text/javascript" src="script.js"></script>
