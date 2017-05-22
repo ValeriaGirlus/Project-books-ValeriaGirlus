@@ -13,9 +13,9 @@
 	<div class="row"><h1 class= "header col-centered">Booklist</h1></div>
 	<div class="flex-container navbar">
 		<div class="dropdown-content">
-  			<button type="button" class="dropbtn btn-link"><a href="javascript: history.go(0)"><i class="glyphicon glyphicon-home"></i></a></button>
-  			<button class="dropbtn btn-link authors">Authors</button>
-  			<button class="dropbtn btn-link Categories">Categories</button>
+  			<button type="button" class="dropbtn btn-link"><a href="javascript: history.go(0)"><i class="glyphicon glyphicon-home"></i></button>
+  			<button class="dropbtn btn-link" id="authors">Authors</button>
+  			<button class="dropbtn btn-link" id="categories">Categories</button>
      	</div>
      	<div class="search">
   			<input type="text" name="search" placeholder="Search..">
@@ -33,6 +33,7 @@
 			<button type="button" class="like btn btn-success"><i class="glyphicon glyphicon-thumbs-up"></i></button>
 			<button type="button" class="dislike btn btn-danger"><i class="glyphicon glyphicon-thumbs-down"></i></button>
 			<button type="button" class="right btn-link"><i class="glyphicon glyphicon-chevron-right"></i></button>
+			<button id="consultDb" class="right btn-link">Consult Database!</button>
 		</div>
 	</div>
 	<div class="row container-fluid" id="results">

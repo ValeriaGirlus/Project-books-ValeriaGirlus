@@ -465,31 +465,62 @@ $.ajax({
 });
 
 
-// responsive navigation bar
+var inAnimation = false;
+$('.bookContainer').on('click','.book button',function(){
+	if(!inAnimation){
+		inAnimation = true;
+		$book = $('.book.active');
 
-function myFunction() {
-    var x = document.getElementById("myTopnav");
-    if (x.className === "topnav") {
-        x.className += " responsive";
-    } else {
-        x.className = "topnav";
-    }
-}
+		// vamos buscar o ID ao nosso hiddenfield
+		$id = $('.hiddenFieldId',$book).text();
 
-/*
+		// vamos buscar a opinion ao nosso custom attribute
+		$opinion = $(this).attr('data-opinion');
+
+		db.transaction(function (tx) {
+			//insert na table que criámos
+			tx.executeSql('INSERT INTO books(id, opinion) VALUES("' + $id + '","' + $opinion + '")');
+		});
+
+		$book.fadeOut(300,function(){
+			$book.removeClass('active');
+			$book.next('.book').fadeIn(300,function(){
+				$book.next('.book').addClass('active');
+				inAnimation = false;
+			});
+		});
+	}
+});
+
+$('#consultDb').click(function(){
+	db.transaction(function (tx) {
+		//buscar todos os resultados da nossa table
+		tx.executeSql('SELECT * FROM books', [], function (tx, results) {
+	   		$.each(results.rows,function(index,item){
+	   			//output de todas as rows/todos os resultados
+				console.log(item);
+			});
+		}, null);
+	});
+});
+
+
+// adicionar a cada botao dropdown a tag <a>
+
+
 function addToAuthors(){
 
 	var authorname = `
-		<a href="#author"></a>
-		`;
+		<ul class="dropdown-menu">
+    		<li><a href=".author"></a></li>
+    	</ul>`;
 
+    	$book = $(".book")
+    	$bookHTML = $('.book').eq(-1);
 
-
-	$books = $("#bookContainer");
-	$authors = $books.find(".author");
-
-	$authors.clone().appendTo(".authors");
-	
+    	$("#authors").append(authorname);
+    	$("h2",$currentBook).text(book.author);
+		$('h2', $bookHTML).text(book.volumeInfo.authors);
 
 }
 addToAuthors();
@@ -497,13 +528,6 @@ addToAuthors();
 
 
 
-
-$(".authors").click(function(){
-	$("#startPage").hide();
-	$("#bookContainer").hide();
-	$(".buttons").hide();
-	$(".footer").hide();
-});
 
 
 

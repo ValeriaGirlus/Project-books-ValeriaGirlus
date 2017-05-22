@@ -236,21 +236,21 @@ h2{
 	width: auto;
     height: 80px;
     align-items: center;
+    font-size: 16px;
 
 }
 
 
 .search {
 	-webkit-flex: 1;
-  -ms-flex: 1;
-  flex: 1;
-  float: right;
-
+	-ms-flex: 1;
+	flex: 1;
+	float: right;
+	text-align: right;
+	margin-top: 20px;
 }
 
-.dropdown-content {
 
-}
 
 input[type=text] {
     width: 130px;
