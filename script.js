@@ -234,7 +234,7 @@ function loadDataWithHTML (){
 			<div class="corpus">
 				<h1 id="title"></h1>
 				<br>
-				Author:<h2 class="author"></h2>
+				Author:<h2 class="author" id="authorfirsts"></h2>
 				<br>
 				<p></p>
 				<br>
@@ -285,11 +285,14 @@ $("#startButton").click(function(){
 	$(".buttons").show();
 });
 
+var like = new Array();
 
 // funcao comum para o botao like e dislike, em baixo esta especificados para cada botao
 
 $(".buttons button.like, button.dislike").click(function(){
 	
+
+
 	$allBooks = $(".book");
 	$book = $(".book.active");
 	$next = $book.next(".book");
@@ -316,18 +319,20 @@ $(".buttons button.like, button.dislike").click(function(){
 
 
 // para o botão like
-
+var like = true
 $(".buttons button.like").click(function(){
-
+	
+	
 	$("#counter1").text(++counter1);
 
 
 });
 
 //para o botao dislike
-
+var dislike = false
 $(".buttons button.dislike").click(function(){
 
+	
 	$("#counter2").text(++counter2);
 });
 
@@ -353,6 +358,7 @@ $(".buttons button.left").click(function(){
 
 		$previous.fadeIn(500,function(){
 			$previous.addClass("active");
+
 
 	});
 });
@@ -388,7 +394,24 @@ $(".buttons button.right").click(function(){
 	});
 });
 
-// função para adiocionar os likes aos favoritos na pagina final
+// qdo volto para tras fazer com que o contador tire o like ou o dislike
+
+$(".buttons button.left").click(function(){
+	
+	if ((like = true) && (counter1 > 0)){
+		$("#counter1").text(--counter1);
+	}
+
+	else if (counter2 > 0) {
+		$("#counter2").text(--counter2);
+	}
+
+	});
+
+
+
+
+// função para adicionar os likes aos favoritos na pagina final
 
 
 // para o botao restart no final de todos os livros mas tirei pois tenho o home para voltar ao inicio
@@ -428,7 +451,7 @@ function LoadData(book){
 			<div class="corpus">
 				<h1 id="title"></h1>
 				<br>
-				Author:<h2 class="author"></h2>
+				Author:<h2 class="author" id= "autorgoogle"></h2>
 				<br>
 				<p></p>
 				<br>
@@ -464,6 +487,75 @@ $.ajax({
 	});
 });
 
+
+
+function addToAuthors(){
+
+	$book = $(".book");
+	
+
+	var authorname = `
+			<a href="#"></a>
+			<a href="#"></a>
+			<a href="#"></a>
+			`;
+
+
+
+    	$("#authors").append(authorname);
+    	$('a', $book). append(authorname.author);
+    	
+};
+
+addToAuthors();
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*
+
+var opinion = "like"
+
+var html = "p> Opinion:";
+if(opinion == "like"){
+	html += "like";
+
+}
+
+html += "<p>";
+
+var html = "<p> Opinion:" + (opinion == "like" ? "like" : "") + "<p>";
+*/
+
+
+
+
+
+
+
+/*
 
 var inAnimation = false;
 $('.bookContainer').on('click','.book button',function(){
@@ -503,27 +595,16 @@ $('#consultDb').click(function(){
 		}, null);
 	});
 });
-
+*/
 
 // adicionar a cada botao dropdown a tag <a>
 
 
-function addToAuthors(){
 
-	var authorname = `
-		<ul class="dropdown-menu">
-    		<li><a href=".author"></a></li>
-    	</ul>`;
 
-    	$book = $(".book")
-    	$bookHTML = $('.book').eq(-1);
 
-    	$("#authors").append(authorname);
-    	$("h2",$currentBook).text(book.author);
-		$('h2', $bookHTML).text(book.volumeInfo.authors);
 
-}
-addToAuthors();
+
 
 
 
