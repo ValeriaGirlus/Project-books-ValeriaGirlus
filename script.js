@@ -318,7 +318,7 @@ $(".buttons button.like, button.dislike").click(function(){
 });
 
 
-// para o botão like
+// para o botão like contabilizar no contador
 var like = true
 $(".buttons button.like").click(function(){
 	
@@ -328,7 +328,7 @@ $(".buttons button.like").click(function(){
 
 });
 
-//para o botao dislike
+//para o botao dislike contabilizar no contador
 var dislike = false
 $(".buttons button.dislike").click(function(){
 
@@ -336,7 +336,7 @@ $(".buttons button.dislike").click(function(){
 	$("#counter2").text(++counter2);
 });
 
-// para a seta da esquerda mas qdo chega ao primeiro livro nao me aparece a pagina incial!!!
+// qdo clicar na seta da esquerda aparecer o livro anterior
 
 $(".buttons button.left").click(function(){
 
@@ -487,13 +487,15 @@ $.ajax({
 	});
 });
 
+var library = new Array(book1, book2, book3); 
 
 
 function addToAuthors(){
 
+	$author = $(".author");
 	$book = $(".book");
+	$currentBook = $(".book").eq(index);
 	
-
 	var authorname = `
 			<a href="#"></a>
 			<a href="#"></a>
@@ -503,7 +505,8 @@ function addToAuthors(){
 
 
     	$("#authors").append(authorname);
-    	$('a', $book). append(authorname.author);
+    	$("a", currentBook).text(value.author);
+    	
     	
 };
 
