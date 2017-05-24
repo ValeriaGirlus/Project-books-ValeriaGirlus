@@ -4,7 +4,7 @@
 	<title>Booklist</title>
 	<meta charset="utf-8">
 	<meta name="author" content="Valeria Girlus">
-	<link rel="stylesheet" type="text/css" href="bootstrap.css">
+	<link rel="stylesheet" type="text/css" href="bootstrap/bootstrap.css">
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 	<link rel="stylesheet" type="text/css" href="style.css">
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
@@ -14,8 +14,18 @@
 	<div class="flex-container navbar">
 		<div class="dropdown-content">
   			<button type="button" class="dropbtn btn-link"><a href="javascript: history.go(0)"><i class="glyphicon glyphicon-home"></i></a></button>
-  			<button class="dropbtn btn-link" id="authors">Authors</button>
-  			<button class="dropbtn btn-link" id="categories">Categories</button>
+  		</div>
+  		<div>
+  			<button type="button" class="btn btn-link dropdown-toggle" data-toggle="dropdown">Titles</button>
+  				<ul class="dropdown-menu" id="titles"></ul>
+  		</div>
+  		<div>
+  			<button type="button" class="btn btn-link dropdown-toggle" data-toggle="dropdown">Authors</button>
+  				<ul class="dropdown-menu" id="authors"></ul>
+  		</div>
+  		<div>
+  			<button type="button" class="btn btn-link dropdown-toggle" data-toggle="dropdown">Categories</button>
+  				<ul class="dropdown-menu" id="categories"></ul>
      	</div>
      	<div class="search">
   			<input type="text" name="search" placeholder="Search..">
@@ -43,7 +53,8 @@
 		</div>
 	</div>
 	<footer class="footer">Valeria Girlus - 2017</footer>	
-	<script type="text/javascript" src="jquery-3.2.1.js"></script>
-	<script type="text/javascript" src="script.js"></script>
+	<script type="text/javascript" src="script/jquery-3.2.1.js"></script>
+	<script type="text/javascript" src="script/script.js"></script>
+	<script type="text/javascript" src="bootstrap/bootstrap.min.js"></script>
 </body>
 </html>

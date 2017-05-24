@@ -473,7 +473,10 @@ function LoadData(book){
 	$('.capa1', $bookHTML).attr("src", book.volumeInfo.imageLinks.thumbnail);
 	$('.googleplay', $bookHTML).attr("href", book.volumeInfo.infoLink);
 	$('.category', $bookHTML).text(book.volumeInfo.categories);
-
+	console.log(1);
+	addToAuthors(book.volumeInfo.authors);
+	addToTitles(book.volumeInfo.title);
+	
 }    
 
 $.ajax({
@@ -487,44 +490,50 @@ $.ajax({
 	});
 });
 
-var library = new Array(book1, book2, book3); 
-
-
-function addToAuthors(){
-
-	$author = $(".author");
-	$book = $(".book");
-	$currentBook = $(".book").eq(index);
-	
-	var authorname = `
-			<a href="#"></a>
-			<a href="#"></a>
-			<a href="#"></a>
+// falta ir buscar os autores dos 3 livros do array
+function addToAuthors(authors){
+//console.log(authors);
+	$.each(authors,function(index,author){
+		var authorname = `
+			<li><a href="#">`+ author +`</a></li>
 			`;
-
-
-
     	$("#authors").append(authorname);
-    	$("a", currentBook).text(value.author);
-    	
+
+    	}); 
+
+		var authorname1 = `
+    		<li><a href="#">Eva Curie</a></li>
+			`;
+    	$("#authors").append(authorname1);
+
     	
 };
 
-addToAuthors();
+
+// falta ir buscar os titulos dos 3 livros do array
+function addToTitles(title){
+//console.log(titles);
+		var titlename = `
+			<li><a href="#">`+ title +`</a></li>
+			`;
+    	$("#titles").append(titlename);
 
 
+};
 
 
+function addToCategories(){
 
+		var categoryname = `
+			<li><a href="#">Biography & Autobiography</a></li>
+			<li><a href="#">Fiction</a></li>
+			<li><a href="#">Juvenile Fiction</a></li>
+			`;
+    	$("#categories").append(categoryname);
 
+	}; 
 
-
-
-
-
-
-
-
+addToCategories();
 
 
 

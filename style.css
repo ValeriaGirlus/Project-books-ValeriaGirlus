@@ -1,5 +1,6 @@
 body {
-	background-size: cover;
+	background-image: url("http://hollandbooks.nl/wp-content/themes/hollandbooks/img/books.png");
+	background-position: bottom;
 	background-repeat: no-repeat;
 }
 
