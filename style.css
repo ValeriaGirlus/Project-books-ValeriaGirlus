@@ -1,8 +1,10 @@
-body {
+/*body {
 	background-image: url("http://hollandbooks.nl/wp-content/themes/hollandbooks/img/books.png");
-	background-position: bottom;
+	background-position: center bottom;
 	background-repeat: no-repeat;
-}
+	background-size: 800px 150px;
+
+}*/
 
 p {
 	font-size: 14pt;
@@ -97,9 +99,6 @@ p {
 	cursor: pointer;
 } 
 
-.book:nth-child(1){
-	display: block;
-}
 
 .btn {
 	margin: 10px;
