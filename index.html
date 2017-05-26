@@ -28,8 +28,15 @@
   				<ul class="dropdown-menu" id="categories"></ul>
      	</div>
      	<div class="search">
-  			<input type="text" name="search" placeholder="Search..">
-  			<button type="button" class="btn-link"><i class="glyphicon glyphicon-search"></i></button>
+  			<input type="text" name="search" placeholder="Search.." id="tbSearch">
+  			<select id="ddlFilter">
+				<option>Title</option>
+				<option>Author</option>
+				<option>Publisher</option>
+				<option>Category</option>
+				<option>ISBN</option>
+			</select>
+			<button type="button" class="btn-link"><i class="glyphicon glyphicon-search"></i></button>
   		</div>
 	</div>	
 	<div class="container-fluid" id="startPage"><button type="button" class="btn btn-link" id="startButton"><img src="books.png"></button>

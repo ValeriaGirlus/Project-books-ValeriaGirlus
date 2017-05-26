@@ -1,10 +1,11 @@
-/*body {
-	background-image: url("http://hollandbooks.nl/wp-content/themes/hollandbooks/img/books.png");
-	background-position: center bottom;
+body {
+	background-image: url("");
+	background-position:;
 	background-repeat: no-repeat;
-	background-size: 800px 150px;
+	
+	
 
-}*/
+}
 
 p {
 	font-size: 14pt;
@@ -34,13 +35,13 @@ p {
 	margin: 20px;
 	margin-top: 25px;
 	margin-left: 100px;*/
-	display: none;s
+	display: none;
 }
 
 .book.active {
 	display: block;
 }
-
+/*
 .capa{
 	margin-bottom: 50px;
 	max-width: 300px;
@@ -49,7 +50,7 @@ p {
 	margin: auto;
 	border-radius: 12px;
 }
-
+*/
 .capa1{
 	margin-bottom: 50px;
 	width: 200px;
@@ -247,17 +248,19 @@ h2{
 	flex: 1;
 	float: right;
 	text-align: right;
-	margin-top: 20px;
+	margin-top: 10px;
 }
 
 
 
 input[type=text] {
-    width: 130px;
+    width: 140px;
+    height: 40px;
     box-sizing: border-box;
     border: 2px solid #ccc;
-    border-radius: 2px;
+    border-radius: 4px;
     font-size: 16px;
+    color:black;
     background-color: white;
     background-image: url('searchicon.png');
     background-position: 10px 10px; 
@@ -265,11 +268,17 @@ input[type=text] {
     padding: 12px 10px 12px 20px;
     -webkit-transition: width 0.4s ease-in-out;
     transition: width 0.4s ease-in-out;
-    margin-bottom: 20px;
+    margin-bottom: 5px;
 
 }
 
-
+#ddlFilter {
+	width: 140px;
+    height: 40px;
+    border: 2px solid #ccc;
+    border-radius: 2px;
+ 
+}
 
 /*
 #repeatButton {

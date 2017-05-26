@@ -206,6 +206,7 @@ function LoadData(book){
 	//console.log(1);
 	addToAuthors(book.volumeInfo.authors);
 	addToTitles(book.volumeInfo.title);
+	addToCategories(book.volumeInfo.categories);
 	
 }    
 
@@ -220,6 +221,46 @@ $.ajax({
 	});
 	$('.book:first-of-type').addClass('active');
 });
+
+// consultar database ao clicar no botao
+
+$('#consultDb').click(function(){
+	console.log(1); // para ver se o botao esta a ser clicado
+	db.transaction(function (tx) {
+	console.log(2);
+		//buscar todos os resultados da nossa table
+		tx.executeSql('SELECT * FROM books', [], function (tx, results) {
+	   		$.each(results.rows,function(index,item){
+	   			//output de todas as rows/todos os resultados
+				console.log(item);
+			});
+		}, null);
+	});
+});
+
+var typing = false;
+var current = null;
+var currentIndex = 0;
+
+$('#tbSearch, #tbFilter').keyup(function(event){
+	//keyup dos inputs (indica que o utilizador estÃ¡ a escrever)
+});
+
+
+
+function autoSearch(){
+	//nova pesquisa (por contador ou apÃ³s pressionar Enter)
+}
+
+function getData(){
+	//recolha de dados dos inputs/selects e efectuar pedido AJAX para recebermos os livros
+}
+
+
+// se quiserem implementar o gif de LOADING 
+//https://stackoverflow.com/questions/1964839/how-can-i-create-a-please-wait-loading-animation-using-jquery
+
+
 
 // adicionar os autores a lista 
 function addToAuthors(authors){
@@ -243,66 +284,16 @@ function addToTitles(title){
 };
 
 
-// adicionar as categorias a lista de categorias MUDAR isto!!!!
-function addToCategories(){
+// adicionar as categorias a lista de categorias 
+function addToCategories(category){
 
 		var categoryname = `
-			<li><a href="#">Biography & Autobiography</a></li>
-			<li><a href="#">Fiction</a></li>
-			<li><a href="#">Juvenile Fiction</a></li>
+			<li><a href="#">`+ category +`</a></li>
+			
 			`;
     	$("#categories").append(categoryname);
 
-	}; 
-
-addToCategories();
-
-
-// consultar database ao clicar no botao
-
-$('#consultDb').click(function(){
-	console.log(1);
-	db.transaction(function (tx) {
-	console.log(2);
-		//buscar todos os resultados da nossa table
-		tx.executeSql('SELECT * FROM books', [], function (tx, results) {
-	   		$.each(results.rows,function(index,item){
-	   			//output de todas as rows/todos os resultados
-				console.log(item);
-			});
-		}, null);
-	});
-});
-
-
-
-function LoadBook(book){
-	//load de um livro
-}
-
-$('.buttons button').click(function(){
-	//click de like/dislike
-});
-
-var typing = false;
-var current = null;
-var currentIndex = 0;
-
-$('#tbSearch, #tbFilter').keyup(function(event){
-	//keyup dos inputs (indica que o utilizador estÃ¡ a escrever)
-});
-
-function autoSearch(){
-	//nova pesquisa (por contador ou apÃ³s pressionar Enter)
-}
-
-function getData(){
-	//recolha de dados dos inputs/selects e efectuar pedido AJAX para recebermos os livros
-}
-
-
-// se quiserem implementar o gif de LOADING 
-//https://stackoverflow.com/questions/1964839/how-can-i-create-a-please-wait-loading-animation-using-jquery
+}; 
 
 
 
@@ -314,42 +305,6 @@ function getData(){
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-/* para ver os detalhes dos livros, na janela do inspect, network, aparecem em baixo os objectos que sao
-adicionados, click em cima deles e dps copiar o selfLink para o browser */
 
 
 
