@@ -208,6 +208,15 @@ function LoadData(book){
 	addToTitles(book.volumeInfo.title);
 	addToCategories(book.volumeInfo.categories);
 	
+	if( typeof book.volumeInfo.title !== "undefined"){
+		$('h1',$bookHTML).text(book.volumeInfo.title);
+	}
+	if( typeof book.volumeInfo.imageLinks !== "undefined"){
+		$('img',$bookHTML).attr('src',book.volumeInfo.imageLinks.thumbnail);
+	}
+	if( typeof book.id !== "undefined"){
+		$('.hiddenFieldId',$bookHTML).text(book.id);
+	}
 }    
 
 $.ajax({
@@ -227,7 +236,7 @@ $.ajax({
 $('#consultDb').click(function(){
 	console.log(1); // para ver se o botao esta a ser clicado
 	db.transaction(function (tx) {
-	console.log(2);
+		console.log(2);
 		//buscar todos os resultados da nossa table
 		tx.executeSql('SELECT * FROM books', [], function (tx, results) {
 	   		$.each(results.rows,function(index,item){
@@ -242,19 +251,72 @@ var typing = false;
 var current = null;
 var currentIndex = 0;
 
+
 $('#tbSearch, #tbFilter').keyup(function(event){
 	//keyup dos inputs (indica que o utilizador estÃ¡ a escrever)
+	if(event.which == 13){
+		clearTimeout(current);
+		autoSearch();
+	}
+	else if(!typing){
+		typing = true;
+		current = setTimeout( function(){ autoSearch(); }, 2000);		
+	}
+	else{
+		clearTimeout(current);
+		current = setTimeout( function(){ autoSearch(); }, 2000);	
+	}
 });
-
-
 
 function autoSearch(){
 	//nova pesquisa (por contador ou apÃ³s pressionar Enter)
+	typing = false;
+	currentIndex = 0;
+	getData();
+	
 }
 
 function getData(){
 	//recolha de dados dos inputs/selects e efectuar pedido AJAX para recebermos os livros
+	var searchText = $('#tbSearch').val();
+	if(searchText == "") return;
+	var filter = $('#ddlFilter option:selected').text();
+	var filterText = $('#tbFilter').val();
+	var query = "";
+	if(filterText != ""){			
+		switch(filter){
+			case 'Title':
+				query = "+intitle:" + filterText;
+				break;
+			case 'Author':
+				query = "+inauthor:" + filterText;
+				break;
+			case 'Publisher':
+				query = "+inpublisher:" + filterText;
+				break;
+			case 'Subject':
+				query = "+subject:" + filterText;
+				break;
+			case 'ISBN':
+				query = "+isbn:" + filterText;
+				break;
+		}
+	}
+	$.ajax({
+		url:"https://www.googleapis.com/books/v1/volumes?q=" + searchText + query + "&startIndex=" + currentIndex
+	}).done(function(data){
+		$('.bookContainer').empty();
+		$.each(data.items,function(index,item){
+			LoadBook(item);
+		});
+		$('.book:first-of-type').addClass('active');
+	});
 }
+
+$(document).on({
+    ajaxStart: function() { $('body').addClass("loading"); },
+    ajaxStop: function() { $('body').removeClass("loading"); }    
+});
 
 
 // se quiserem implementar o gif de LOADING 

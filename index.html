@@ -11,31 +11,23 @@
 </head>
 <body>
 	<div class="row"><h1 class= "header col-centered">Booklist</h1></div>
-	<div class="flex-container navbar">
-		<div class="dropdown-content">
-  			<button type="button" class="dropbtn btn-link"><a href="javascript: history.go(0)"><i class="glyphicon glyphicon-home"></i></a></button>
-  		</div>
-  		<div>
-  			<button type="button" class="btn btn-link dropdown-toggle" data-toggle="dropdown">Titles</button>
-  				<ul class="dropdown-menu" id="titles"></ul>
-  		</div>
-  		<div>
-  			<button type="button" class="btn btn-link dropdown-toggle" data-toggle="dropdown">Authors</button>
-  				<ul class="dropdown-menu" id="authors"></ul>
-  		</div>
-  		<div>
-  			<button type="button" class="btn btn-link dropdown-toggle" data-toggle="dropdown">Categories</button>
-  				<ul class="dropdown-menu" id="categories"></ul>
-     	</div>
-     	<div class="search">
+	<div class="flex-container navbar dropdown-content">
+		<a href="javascript: history.go(0)"><i class="glyphicon glyphicon-home"></i></a></button>
+  		<button type="button" class="btn btn-link dropdown-hover" data-toggle="dropdown">Titles</button>
+  			<ul class="dropdown-menu" id="titles"></ul>
+  		<button type="button" class="btn btn-link dropdown-toggle" data-toggle="dropdown">Authors</button>
+  			<ul class="dropdown-menu" id="authors"></ul>
+  		<button type="button" class="btn btn-link dropdown-toggle" data-toggle="dropdown">Categories</button>
+  			<ul class="dropdown-menu" id="categories"></ul>
+       	<div class="search">
   			<input type="text" name="search" placeholder="Search.." id="tbSearch">
-  			<select id="ddlFilter">
-				<option>Title</option>
-				<option>Author</option>
-				<option>Publisher</option>
-				<option>Category</option>
-				<option>ISBN</option>
-			</select>
+  				<select id="ddlFilter">
+					<option>Title</option>
+					<option>Author</option>
+					<option>Publisher</option>
+					<option>Category</option>
+					<option>ISBN</option>
+				</select>
 			<button type="button" class="btn-link"><i class="glyphicon glyphicon-search"></i></button>
   		</div>
 	</div>	
@@ -59,7 +51,7 @@
 			<i class="glyphicon glyphicon-thumbs-down" id="g2"><label id="counter2"></label></i>
 		</div>
 	</div>
-	<footer class="footer">Valeria Girlus - 2017</footer>	
+	<footer class="footer">Valeria Girlus © 2017</footer>	
 	<script type="text/javascript" src="script/jquery-3.2.1.js"></script>
 	<script type="text/javascript" src="script/script.js"></script>
 	<script type="text/javascript" src="bootstrap/bootstrap.min.js"></script>
